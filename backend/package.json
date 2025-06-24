@@ -1,0 +1,40 @@
+{
+  "name": "web_project_around_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx eslint .",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParzySan/web_project_around_express.git"
+  },
+  "author": "Parzy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ParzySan/web_project_around_express/issues"
+  },
+  "homepage": "https://github.com/ParzySan/web_project_around_express#readme",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "celebrate": "^15.0.3",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "express": "^5.1.0",
+    "express-winston": "^4.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.0",
+    "node-fetch": "^3.3.2",
+    "validator": "^13.15.15",
+    "winston": "^3.17.0"
+  },
+  "keywords": []
+}

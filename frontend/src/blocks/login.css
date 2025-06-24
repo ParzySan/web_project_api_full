@@ -1,0 +1,117 @@
+.container__login {
+  max-width: 1280px;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.login__welcome {
+  margin-top: 32px;
+  color: white;
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.login__error {
+  color: #ff0000;
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  width: 358px;
+  margin-left: 461px;
+  margin-top: 12px;
+  /* background-color: aqua; */
+}
+
+.login__form input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: #ffffff;
+}
+
+.login__form label {
+  margin-top: 30px;
+  margin-bottom: 6px;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  color: #cccccc;
+}
+
+.login__link_text {
+  color: #ffffff;
+}
+
+.login__signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.login__signup p {
+  margin-top: -15px;
+  margin-right: 12px;
+  color: white;
+  font-size: 14px;
+  font-family: "Inter";
+  font-weight: 400;
+  /* background-color: rgb(25, 210, 74); */
+}
+
+.signup__link {
+  color: white;
+}
+
+.login__button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login__link {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 0;
+  width: 358px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  border: none;
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 216px;
+}
+
+form input {
+  margin-top: 30px;
+}
+
+form input::placeholder {
+  color: #cccccc;
+  margin-top: 13px;
+}
+
+.login__button {
+  color: white;
+  width: 112px;
+  height: 44px;
+  text-align: center;
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: auto;
+  margin-right: 200px;
+  display: block;
+  margin-top: -70px;
+  z-index: 1000;
+  outline: none;
+  text-decoration: none;
+}

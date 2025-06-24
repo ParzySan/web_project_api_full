@@ -1,0 +1,170 @@
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 17px 20px;
+
+  margin-left: 200px;
+  margin-top: 50px;
+  margin-right: 200px;
+}
+/* .template__card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 17px 20px;
+
+  margin-left: 200px;
+  margin-top: 50px;
+  margin-right: 200px;
+} */
+
+/* Tarjeta individual */
+.gallery__card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 282px;
+  height: 361px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Imagen de la tarjeta */
+.gallery__card img {
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+/* Información de la tarjeta */
+.gallery__card-info {
+  width: 246px;
+  height: 23px;
+  margin-top: 25px;
+  margin-left: 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-overflow: ellipsis;
+}
+
+.gallery__like-button.activa {
+  opacity: 1;
+  background: url(https://practicum-content.s3.us-west-1.amazonaws.com/web-code/dom/moved_heart-filled.svg)
+    center no-repeat;
+}
+.gallery__like-button {
+  border: none;
+  background: url(https://practicum-content.s3.us-west-1.amazonaws.com/web-code/dom/moved_heart.svg)
+    center no-repeat;
+  background-size: 100%;
+  width: 21px;
+  height: 19px;
+}
+
+.gallery__remove-button {
+  position: absolute;
+  border: none;
+  background: url(../images/Trash.svg);
+  background-size: 100%;
+  width: 18px;
+  height: 19px;
+  margin-left: 249px;
+  margin-top: 18px;
+  z-index: 10;
+}
+
+.gallery__like-button:hover {
+  opacity: 50%;
+}
+
+.gallery__title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: black;
+  font-family: "Inter";
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29.05px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+/* Estilo del modal */
+.image-modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 100;
+}
+
+.image-modal.active {
+  opacity: 1;
+  /* Muestra el modal */
+  visibility: visible;
+  /* Lo hace visible */
+  display: flex;
+  z-index: 100;
+}
+
+.image-modal__image {
+  max-width: 75vw; /* Máximo 75% del ancho de la ventana */
+  max-height: 75vh; /* Máximo 75% de la altura de la ventana */
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.image-modal__content {
+  position: relative;
+  padding: 50px;
+  border-radius: 10px;
+  max-width: 75vw; /* Máximo 75% del ancho de la ventana */
+  max-height: 75vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  align-items: start;
+  justify-items: start;
+  overflow: hidden; /* Agrega desplazamiento si el contenido excede el tamaño */
+}
+
+.image-modal__title {
+  font-size: 12px;
+  margin: 0;
+  color: white;
+  font-family: "Inter";
+  text-align: left; /* Asegura el texto alineado a la izquierda */
+  align-self: flex-start;
+}
+
+.image-modal__close-button {
+  position: absolute; /* Posiciona la "X" respecto al contenedor */
+  top: -25px; /* Sobre la imagen */
+  right: 20px;
+  transform: rotate(45deg) scale(3);
+
+  grid-row: 1;
+
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.image-modal__close-button:hover {
+  opacity: 50%;
+}

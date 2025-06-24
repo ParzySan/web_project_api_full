@@ -1,0 +1,11 @@
+@import url(./fonts/web/inter.css);
+@import url(./blocks/body.css);
+@import url(./blocks/header.css);
+@import url(./blocks/form.css);
+@import url(./App.css);
+
+@import url(./blocks/main.css);
+@import url(./blocks/gallery.css);
+
+@import url(./blocks/footer.css);
+@import url(./blocks/media.css);
