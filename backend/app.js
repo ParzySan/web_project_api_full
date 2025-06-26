@@ -12,13 +12,19 @@ const path = require("path");
 var cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 require("dotenv").config();
 
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 const secret = NODE_ENV === "production" ? JWT_SECRET : "dev-secret";
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: "https://aplicacionwebparzy.mooo.com",
+    credentials: true,
+  })
+);
 app.options("*", cors());
 
 // Conexión a MongoDB
@@ -33,9 +39,9 @@ mongoose
 
 app.use(express.json());
 app.use(requestLogger);
-// app.listen(PORT, () => {
-//   console.log(`Servidor escuchando en http://localhost:${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en http://localhost:${PORT}`);
+});
 //Rutas libres
 // Validar /signup
 app.post(
