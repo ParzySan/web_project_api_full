@@ -12,9 +12,10 @@ const path = require("path");
 var cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+
 require("dotenv").config();
 
+const PORT = process.env.PORT || 3000;
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 const secret = NODE_ENV === "production" ? JWT_SECRET : "dev-secret";
