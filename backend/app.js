@@ -20,13 +20,21 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 
 const secret = NODE_ENV === "production" ? JWT_SECRET : "dev-secret";
 // app.use(cors());
-app.use(
-  cors({
-    origin: "https://around-api.es.tripleten-services.com/v1",
-    credentials: true,
-  })
-);
-app.options("*", cors());
+const corsOptions = {
+  origin: [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:5127",
+    "http://localhost:3000",
+    "http://localhost:3001",
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "Accept"],
+  exposedHeaders: ["Authorization", "Set-Cookie"],
+};
+
+app.use(cors(corsOptions));
 
 // Conexión a MongoDB
 mongoose
