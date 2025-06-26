@@ -73,8 +73,8 @@ app.post(
 
 // Rutas orotegidas
 app.use(auth);
-app.use("/users", usersRouter);
-app.use("/cards", cardsRouter);
+// app.use("/users", usersRouter);
+// app.use("/cards", cardsRouter);
 
 // Ruta para recursos no encontrados
 app.use((req, res) => {
