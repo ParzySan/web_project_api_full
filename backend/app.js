@@ -22,7 +22,8 @@ const secret = NODE_ENV === "production" ? JWT_SECRET : "dev-secret";
 // app.use(cors());
 app.use(
   cors({
-    origin: " https://aplicacionwebparzy.mooo.com/",
+    origin:
+      "https://around-api.es.tripleten-services.com/v1, https://aplicacionwebparzy.mooo.com",
     credentials: true,
   })
 );
