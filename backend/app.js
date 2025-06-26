@@ -13,19 +13,12 @@ var cors = require("cors");
 
 const app = express();
 const PORT = 3000;
-
 require("dotenv").config();
 
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 const secret = NODE_ENV === "production" ? JWT_SECRET : "dev-secret";
-
-app.use(
-  cors({
-    origin: "https://aplicacionwebparzy.mooo.com",
-    credentials: true,
-  })
-);
+app.use(cors());
 app.options("*", cors());
 
 // Conexión a MongoDB
