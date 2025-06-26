@@ -87,7 +87,8 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: "https://around-api.es.tripleten-services.com/v1",
+  // baseUrl: "https://around-api.es.tripleten-services.com/v1",
+  baseUrl: "https://aplicacionwebparzy.mooo.com",
 });
 
 export default api;
