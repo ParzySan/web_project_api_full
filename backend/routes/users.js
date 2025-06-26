@@ -32,7 +32,7 @@ router.get("/me", getCurrentUser);
 // router.post("/", createUser);
 // Patch /profile
 router.patch(
-  "/me",
+  "/user/me",
   celebrate({
     body: Joi.object().keys({
       name: Joi.string().min(2).max(30).required(),
@@ -43,7 +43,7 @@ router.patch(
 );
 // Patch /avatar
 router.patch(
-  "/me/avatar",
+  "/user/me/avatar",
   celebrate({
     body: Joi.object().keys({
       avatar: Joi.string().required().custom(validateURL),
