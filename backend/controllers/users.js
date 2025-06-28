@@ -9,7 +9,7 @@ exports.getAllUsers = (req, res) => {
     .catch(next);
 };
 
-// GET /users/:userId
+// POST /users
 exports.createUser = (req, res) => {
   const { name, about, avatar, email, password } = req.body;
 
@@ -41,29 +41,29 @@ exports.createUser = (req, res) => {
 };
 
 // POST /users
-exports.createUser = (req, res) => {
-  const { name, about, avatar, email, password } = req.body;
+// exports.createUser = (req, res) => {
+//   const { name, about, avatar, email, password } = req.body;
 
-  User.create({ name, about, avatar, email, password })
-    .then((user) => {
-      const userWithoutPassword = user.toObject();
-      delete userWithoutPassword.password;
-      res.status(201).send(userWithoutPassword);
-    })
-    .catch((err) => {
-      if (err.name === "ValidationError") {
-        res
-          .status(400)
-          .send({ message: "Datos inválidos", error: err.message });
-      } else if (err.code === 11000) {
-        res.status(409).send({ message: "El correo ya está registrado" });
-      } else {
-        res
-          .status(500)
-          .send({ message: "Error del servidor", error: err.message });
-      }
-    });
-};
+//   User.create({ name, about, avatar, email, password })
+//     .then((user) => {
+//       const userWithoutPassword = user.toObject();
+//       delete userWithoutPassword.password;
+//       res.status(201).send(userWithoutPassword);
+//     })
+//     .catch((err) => {
+//       if (err.name === "ValidationError") {
+//         res
+//           .status(400)
+//           .send({ message: "Datos inválidos", error: err.message });
+//       } else if (err.code === 11000) {
+//         res.status(409).send({ message: "El correo ya está registrado" });
+//       } else {
+//         res
+//           .status(500)
+//           .send({ message: "Error del servidor", error: err.message });
+//       }
+//     });
+// };
 
 // PATCH /users/me — actualizar perfil (name, about)
 exports.updateProfile = (req, res) => {
