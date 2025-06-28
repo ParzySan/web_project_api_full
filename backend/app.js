@@ -20,14 +20,12 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 
 const secret = NODE_ENV === "production" ? JWT_SECRET : "dev-secret";
 // app.use(cors());
-app.use(
-  cors({
-    origin: "https://aplicacionwebparzy.mooo.com/",
-    credentials: true,
-  })
-);
-app.options("*", cors());
+const corsOptions = {
+  origin: "https://aplicacionwebparzy.mooo.com",
+  credentials: true,
+};
 
+app.use(cors(corsOptions));
 // Conexión a MongoDB
 mongoose
   .connect("mongodb://localhost:27017/aroundb")
