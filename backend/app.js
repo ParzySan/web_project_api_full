@@ -41,7 +41,13 @@ app.use(requestLogger);
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
-//Rutas libres
+//teste crash quitar despues de pasar el sprint
+app.get("/crash-test", () => {
+  setTimeout(() => {
+    throw new Error("El servidor va a caer");
+  }, 0);
+});
+
 // Validar /signup
 app.post(
   "/signup",

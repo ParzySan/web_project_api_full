@@ -1,17 +1,22 @@
 import ImagePopup from "../ImagePopup/ImagePopup";
-import React from "react";
+import React, { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 export default function Card(props) {
-  const { name, link, isLiked } = props.card;
+  const { name, link, likes } = props.card;
   const imageComponent = {
     name: name,
     link: link,
   };
-  // const { currentUser } = useContext(CurrentUserContext);
-  // function handleOpenImagePopup(imageComponent) {
-  //   setSelectedImage(imageComponent);
-  // }
+  const { currentUser } = useContext(CurrentUserContext);
+
+  const isLiked = likes.some(
+    (userId) =>
+      userId === currentUser._id ||
+      (userId._id && userId._id === currentUser._id) // por si likes tiene objetos
+  );
+
   const cardLikeButtonClassName = `gallery__like-button ${
-    isLiked ? "activa " : ""
+    isLiked ? "activa" : ""
   }`;
 
   function handleLikeClick() {

@@ -31,6 +31,7 @@
 
 .header__logout {
   color: rgb(182, 182, 182);
+  cursor: pointer;
 }
 
 .header__top {

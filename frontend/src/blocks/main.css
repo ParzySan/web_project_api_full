@@ -34,6 +34,7 @@
   position: absolute;
   margin-left: 45px;
   opacity: 0;
+  cursor: pointer;
 }
 
 .profile__cnt:hover .profile__button {
@@ -58,6 +59,7 @@
 
 .profile__edit {
   margin-top: 15px;
+  cursor: pointer;
 }
 .profile__add_style {
   width: 150px;
@@ -92,6 +94,7 @@
 button {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .profile__edit:hover {

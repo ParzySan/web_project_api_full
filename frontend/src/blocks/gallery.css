@@ -64,9 +64,11 @@
   background-size: 100%;
   width: 21px;
   height: 19px;
+  cursor: pointer;
 }
 
 .gallery__remove-button {
+  cursor: pointer;
   position: absolute;
   border: none;
   background: url(../images/Trash.svg);
@@ -108,7 +110,7 @@
   width: 100vw;
   height: 100vh;
 
-  z-index: 100;
+  z-index: 100000;
 }
 
 .image-modal.active {
@@ -117,7 +119,8 @@
   visibility: visible;
   /* Lo hace visible */
   display: flex;
-  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100000000;
 }
 
 .image-modal__image {
@@ -138,6 +141,7 @@
   grid-template-rows: auto auto;
   align-items: start;
   justify-items: start;
+
   overflow: hidden; /* Agrega desplazamiento si el contenido excede el tamaño */
 }
 

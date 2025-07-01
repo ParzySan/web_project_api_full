@@ -80,7 +80,11 @@ function App() {
 
   async function handleCardLike(card) {
     // Verifica una vez más si a esta tarjeta ya les has dado like
-    const isLiked = card.isLiked;
+    const isLiked = card.likes.some(
+      (userId) =>
+        userId === currentUser._id ||
+        (userId._id && userId._id === currentUser._id)
+    );
 
     // Envía una solicitud a la API y obtén los datos actualizados de la tarjeta
     await api
@@ -202,8 +206,8 @@ function App() {
                       {isMenuOpen ? "✕" : ""}
                     </button>
                     <div className="header__mobile-menu">
-                      <p className="header__email">email@mail.com</p>
-                      <p className="header__logout">Cerrar sesión</p>
+                      <p className="header__email">{userEmail}</p>
+                      <button className="header__logout">Cerrar sesión</button>
                     </div>
                   </>
                 )}
@@ -220,8 +224,8 @@ function App() {
                   onClosePopup={handleClosePopup}
                   popup={popup}
                   cards={cards}
-                  onCardLike={() => {}}
-                  onCardDelete={() => {}}
+                  onCardLike={handleCardLike}
+                  onCardDelete={handleCardDelete}
                   onAddPlaceSubmit={handleAddPlaceSubmit}
                 />
                 <Footer className="footer" />
