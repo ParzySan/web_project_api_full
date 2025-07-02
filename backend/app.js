@@ -21,7 +21,7 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 const secret = NODE_ENV === "production" ? JWT_SECRET : "dev-secret";
 // app.use(cors());
 const corsOptions = {
-  origin: ["https://aplicacionwebparzy.mooo.com", "http://localhost:3000"],
+  origin: "http://localhost:3000",
   credentials: true,
 };
 
