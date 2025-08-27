@@ -1,10 +1,35 @@
-# Tripleten web_project_api_full
+# web_project_api_full
 
-Sprint 18
-Hacer que la pagina este en un servidor (google clouds) y este corriendo permanentemente con pm2, hacer que el front y el back se comuniquen, las peticiones sean correctas.
 
 # https://aplicacionwebparzy.mooo.com/
 
-en git esta solo el uso loca más se comunica a la api y base de datos que ya esta en la nube, por eso no puse el localhost, por que pense que seria o se revisaria el la aplicación por afuera que sirviera los servidores y todo lo que configuramos.
+📌 Descripción de la aplicación
+La aplicación API Full es un proyecto de desarrollo web que implementa una arquitectura completa de servidor y cliente, conectando una API RESTful con un frontend dinámico. Su propósito es demostrar la integración de tecnologías modernas para la gestión de usuarios y tarjetas (posts), aplicando estándares de seguridad, manejo de errores y persistencia de datos.
 
-# Favor de inicializar el programa desde el Front con npm run dev, ya que si se inicializa desde el back sale la pagina que esta diciendo de que requiere un token, ya que el back no tiene nada visual para el usuario y los datos estan protegidos. Y no nos pidieron ni enseñaron a que inicialice la pagina desde el back, solo que ahí estan las peticiones y demás procesos que el usuario final no debe de ver. Ya corroboré el uso de la aplicación en otra maquina, clonando el repositorio desde mi git y funciona e igual si corres desde el front aparecera todo, si no, aparece esa pagina que pide token, ojo al usar la base de datos local no aparecera ninguna foto al agregar cartas o demás aparecera todo ya guardado localmente.
+El sistema permite:
+Registro e inicio de sesión de usuarios con autenticación segura mediante JWT (JSON Web Token).
+Gestión de usuarios: actualización de perfil, avatar y datos personales.
+Gestión de tarjetas (cards): creación, visualización, eliminación y sistema de likes.
+Manejo de permisos y validación: solo el creador de una tarjeta puede eliminarla, y las rutas están protegidas para usuarios autenticados.
+Manejo de errores personalizado para mejorar la experiencia y la robustez de la API.
+
+⚙️ Tecnologías utilizadas
+🔹 Backend
+Node.js: entorno de ejecución para el servidor.
+Express.js: framework para estructurar la API REST.
+MongoDB + Mongoose: base de datos NoSQL para almacenar usuarios y tarjetas.
+bcryptjs: encriptación de contraseñas.
+jsonwebtoken (JWT): autenticación y autorización de usuarios.
+Celebrate/Joi: validación de datos en el servidor.
+CORS: control de accesos entre cliente y servidor.
+Dotenv: manejo seguro de variables de entorno.
+
+🔹 Frontend
+React.js (con Vite o Create React App): interfaz de usuario basada en componentes.
+React Router DOM: navegación entre vistas.
+Context API: manejo de estado global (usuarios y tarjetas).
+Fetch API / Axios: consumo de la API en el cliente.
+
+CSS3 + BEM: estilos modulares y escalables.
+
+Popup/Modal Components: interacción para edición de perfil, avatar y creación de tarjetas.
